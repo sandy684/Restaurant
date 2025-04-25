@@ -68,43 +68,41 @@ function App() {
     <div>
       <h1>SanRestaurant</h1>
 
-      <div>
-        <h2>Indian</h2>
-        {indian.map((item, i) => (
-          <div key={i}>
-            {item.name} - Rs:{item.price}
-            <button onClick={() => addToCart(item)}>Add</button>
-          </div>
-        ))}
-      </div>
+      <div className="container">
+        <div className="mn">
+          <h2>Indian</h2>
+          {indian.map((item, i) => (
+            <div key={i}>
+              {item.name} - Rs:{item.price}
+              <button onClick={() => addToCart(item)}>Add</button>
+            </div>
+          ))}
 
-      <div>
-        <h2>Chinese</h2>
-        {chinese.map((item, i) => (
-          <div key={i}>
-            {item.name} - Rs:{item.price}
-            <button onClick={() => addToCart(item)}>Add</button>
-          </div>
-        ))}
-      </div>
+          <h2>Chinese</h2>
+          {chinese.map((item, i) => (
+            <div key={i}>
+              {item.name} - Rs:{item.price}
+              <button onClick={() => addToCart(item)}>Add</button>
+            </div>
+          ))}
 
-      <div>
-        <h2>Japanese</h2>
-        {japanese.map((item, i) => (
-          <div key={i}>
-            {item.name} - Rs:{item.price}
-            <button onClick={() => addToCart(item)}>Add</button>
-          </div>
-        ))}
-      </div>
+          <h2>Japanese</h2>
+          {japanese.map((item, i) => (
+            <div key={i}>
+              {item.name} - Rs:{item.price}
+              <button onClick={() => addToCart(item)}>Add</button>
+            </div>
+          ))}
+        </div>
 
-      <div>
-        <h2>Cart</h2>
-        {cart.map((item, i) => (
-          <div key={i}>{item.name} - Rs:{item.price}</div>
-        ))}
-        <h3>Total: Rs:{total}</h3>
-        <button onClick={placeOrder}>Place Order</button>
+        <div className="ct">
+          <h2>Cart</h2>
+          {cart.map((item, i) => (
+            <div key={i}>{item.name} - Rs:{item.price}</div>
+          ))}
+          <h3>Total: Rs:{total}</h3>
+          <button onClick={placeOrder}>Place Order</button>
+        </div>
       </div>
     </div>
   );

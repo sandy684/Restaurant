@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+
+  .mn {
+    flex: 3;
+  }
+  
+  .mn h2 {
+    color: orangered;
+    margin-bottom: 5px;
+  }
+  
+  .mn div {
+    margin-bottom: 10px;
+  }
+  
+
+  .ct {
+    flex: 1;
+    border-left: 2px solid white;
+    padding-left: 20px;
+    background-color: whitesmoke }
+  
+  .ct h2 {
+    color: brown;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 4px 8px;
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color:lightgreen }
+  
