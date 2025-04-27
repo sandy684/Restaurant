@@ -66,46 +66,65 @@ function App() {
 
   return (
     <div>
-      <h1>SanRestaurant</h1>
-
+      <nav><span>SanRestaurant</span></nav>
       <div className="container">
         <div className="mn">
-          <h2>Indian</h2>
-          {indian.map((item, i) => (
-            <div key={i}>
-              {item.name} - Rs:{item.price}
-              <button onClick={() => addToCart(item)}>Add</button>
-            </div>
-          ))}
 
-          <h2>Chinese</h2>
-          {chinese.map((item, i) => (
-            <div key={i}>
-              {item.name} - Rs:{item.price}
-              <button onClick={() => addToCart(item)}>Add</button>
+          <div className="cuisine">
+            <h2>Indian Cuisine</h2>
+            <div className="items">
+              {indian.map((item, index) => (
+                <div key={index} className="sd">
+                  <h4>{item.name}</h4>
+                  <p>Rs. {item.price}</p>
+                  <button onClick={() => addToCart(item)}>Add to Cart</button>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
 
-          <h2>Japanese</h2>
-          {japanese.map((item, i) => (
-            <div key={i}>
-              {item.name} - Rs:{item.price}
-              <button onClick={() => addToCart(item)}>Add</button>
+          <div className="cuisine">
+            <h2>Chinese Cuisine</h2>
+            <div className="items">
+              {chinese.map((item, index) => (
+                <div key={index} className="sd">
+                  <h4>{item.name}</h4>
+                  <p>Rs. {item.price}</p>
+                  <button onClick={() => addToCart(item)}>Add to Cart</button>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className="cuisine">
+            <h2>Japanese Cuisine</h2>
+            <div className="items">
+              {japanese.map((item, index) => (
+                <div key={index} className="sd">
+                  <h4>{item.name}</h4>
+                  <p>Rs. {item.price}</p>
+                  <button onClick={() => addToCart(item)}>Add to Cart</button>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         <div className="ct">
           <h2>Cart</h2>
-          {cart.map((item, i) => (
-            <div key={i}>{item.name} - Rs:{item.price}</div>
-          ))}
-          <h3>Total: Rs:{total}</h3>
+          {cart.length === 0 ? (
+            <p>No items in cart.</p>
+          ) : (
+            cart.map((item, index) => (
+              <p key={index}>{item.name} - Rs. {item.price}</p>
+            ))
+          )}
+          <h3>Total: Rs. {total}</h3>
           <button onClick={placeOrder}>Place Order</button>
         </div>
       </div>
     </div>
   );
 }
-
 export default App;
